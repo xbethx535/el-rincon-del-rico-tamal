@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - El Rincón del Tamal</title>
+    <link rel="stylesheet" href="styles_contact.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="top-bar">
+            <div class="logo">
+                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>            
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main de contacto -->
+    <main id="contacto">
+        <h2>Contactanos</h2>
+        <div class="contacto-container">
+            <!-- Información de contacto -->
+            <div class="info">
+                <p><strong>Email:</strong> <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
+                <p><strong>Teléfono:</strong> XX-XXXXXXXX</p>
+                <p><strong>Ubicación:</strong> Calle Almería, Benito Juárez, #290, CDMX</p>
+                <p>Síguenos en nuestras redes sociales:</p>            
+                <div class="redes-sociales">
+                <ul>
+                    <p>@el_rincon_del_tamal</p>
+                    <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
+                    <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
+                </ul>              
+            </div>   
+            </div>
+            <!-- Espacio para el mapa -->
+            <div class="mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.646459947374!2d-99.173619!3d19.404931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff5b28b947b9%3A0x1c1c7f89c0c8bb90!2sBenito%20Ju%C3%A1rez%2C%20Ciudad%20de%20M%C3%A9xico!5e0!3m2!1ses-419!2smx!4v1691173744591!5m2!1ses-419!2smx" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 El Rincón del Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    </footer>
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '677f4a1f2812e20e7c67ece0' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+</body>
+</html>

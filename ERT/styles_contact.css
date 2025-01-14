@@ -1,0 +1,189 @@
+/* Estilos generales */
+body {
+    font-family: 'The Seasons', serif;
+    margin: 0;
+    padding: 0;
+    color: #182126;
+    background-color: #f2a9229c;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #37060fde;
+    height: 50px; /* Ajuste para que el logo y el menú queden centrados */
+}
+
+.logo img {
+    height: 80px; /* Ajusta la altura del logo */
+    max-width: 100%;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 1.5rem;
+    font-size: 1.4rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+    color: #F2A922;
+    transform: scale(1.1);
+}
+
+/* Carrito */
+.carrito img {
+    height: 30px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 690px;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #1b7439cc;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #F2A922;
+}
+
+.hero-text p {
+    font-size: 1.9rem;
+    color: #ffffff;
+}
+
+.btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background-color: #8C0335;
+    color: #F0F0F0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
+}
+
+.btn:hover {
+    background-color: #F2A922;
+    color: #8C0335;
+}
+
+/* Estilos para el main de contacto */
+#contacto {
+    padding: 1rem 1rem;
+   
+}
+
+#contacto h2 {
+    font-size: 3.9rem;
+    text-align: center;
+    color: #8C0335;
+    margin-bottom: 2rem;
+}
+
+.contacto-container {
+    display: flex;
+    flex-wrap: wrap; /* Adaptable para pantallas pequeñas */
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contacto-container .info {
+    flex: 1;
+    max-width: 45%; /* Toma hasta el 45% del ancho */
+}
+
+.contacto-container .mapa {
+    flex: 1;
+    max-width: 50%; /* Toma hasta el 50% del ancho */
+    text-align: center;
+}
+
+.contacto-container .info p,
+.contacto-container .info ul {
+    font-size: 1.2rem;
+    color: #261818;
+    margin-bottom: 1rem;
+}
+
+.contacto-container .info a {
+    color: #F21B42;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto-container .info a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociales {
+    margin-top: 1rem;
+    clear:both;
+}
+
+.redes-sociales a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.redes-sociales img {
+    width: 30px;
+    height: 30px;
+}
+.redes-sociales {
+    margin-top: 1rem;
+    display: block; /* Esto hace que las redes sociales se ubiquen en una nueva línea */
+    text-align: left; /* Centra las imágenes si lo deseas */
+}
+
+
+/* Mapa */
+.mapa iframe {
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* Ajusta el color según lo necesites */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+

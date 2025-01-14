@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - El Rincón del Tamal</title>
+    <link rel="stylesheet" href="styles_pedidos.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="top-bar">
+            <div class="logo">
+                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Pedidos</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    
+  <!-- Sección de pedidos -->
+  <section id="pedidos">
+    <div class="contenedor-pedido">
+        <!-- Rectángulo de la orden -->
+        <div class="orden">
+            <h2>Tu Pedido</h2>
+            <ul>
+                <li>Gourmet de Pollo ..$45</li>
+                <li>Salsa Roja ............. $15</li>
+                <li>Chocolate Caliente.$30</li>
+                <!-- Agrega aquí más productos según el pedido -->
+            </ul>
+            <h2></h2>
+            <p>Total: $120</p>
+        </div>
+
+        <!-- Imagen y botón de pago -->
+        <div class="pago">
+            <img src="IMG/tamencar.png" alt="Imagen de Pago">
+            <a href="pago.html" class="btn">Ir a pagar</a>
+        </div>
+    </div>
+  </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
+        <p>Teléfono: XX-XXXXXXXX</p>
+        <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
+        <div class="redes-sociales">
+            <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
+            <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
+            <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 El Rincón del Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    </footer>
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '677f4a1f2812e20e7c67ece0' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+</body>
+</html>
