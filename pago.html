@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago - El Rincón del Tamal</title>
+    <link rel="stylesheet" href="styles_pago.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="top-bar">
+            <div class="logo">
+                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Menú</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+  <!-- Formulario de Domicilio -->
+  <section id="formulario-domicilio">
+    <div class="contenedor-formulario">
+        <h2>Formulario de Domicilio</h2>
+        <form action="procesar_domicilio.php" method="POST">
+            <!-- Datos de domicilio -->
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            </div>
+            <div class="campo">
+                <label for="direccion">Dirección de envío</label>
+                <input type="text" id="direccion" name="direccion" required placeholder="Calle, Número, Colonia">
+            </div>
+            <div class="campo">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" required placeholder="Ciudad de envío">
+            </div>
+
+            <button type="submit" class="btn">Continuar al pago</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Formulario de pago -->
+    <section id="formulario-pago">
+        <div class="contenedor-formulario">
+            <h2>Formulario de Pago</h2>
+            <form action="procesar_pago.php" method="POST">
+                <!-- Datos personales -->
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                </div>
+                <div class="campo">
+                    <label for="direccion">Dirección de envío</label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Calle, Número, Colonia">
+                </div>
+                <div class="campo">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" required placeholder="Ciudad de envío">
+                </div>
+
+                <!-- Información de la tarjeta -->
+                <div class="campo">
+                    <label for="tarjeta">Número de tarjeta</label>
+                    <input type="text" id="tarjeta" name="tarjeta" required placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+                <div class="campo">
+                    <label for="expiracion">Fecha de expiración</label>
+                    <input type="month" id="expiracion" name="expiracion" required>
+                </div>
+                <div class="campo">
+                    <label for="cvv">Código de seguridad (CVV)</label>
+                    <input type="text" id="cvv" name="cvv" required placeholder="123" maxlength="3">
+                </div>
+
+                <!-- Botón de pago -->
+                <button type="submit" class="btn">Pagar</button>
+            </form>
+        </div>
+    </section>
+
+ <!-- Sección de contacto -->
+ <section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
+    <p>Teléfono: XX-XXXXXXXX</p>
+    <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
+    <div class="redes-sociales">
+        <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
+        <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
+        <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
+    </div>
+</section>
+
+<!-- Pie de página -->
+<footer>
+        <p>&copy; 2024 El Rincón del Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+</footer>
+<script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '677f4a1f2812e20e7c67ece0' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>

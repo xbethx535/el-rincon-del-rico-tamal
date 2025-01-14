@@ -1,0 +1,153 @@
+/* Estilos generales */
+body {
+    font-family: 'The Seasons', serif;
+    margin: 0;
+    padding: 0;
+    color: #182126;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #37060fde;
+    height: 50px;
+}
+
+.logo img {
+    height: 80px;
+    max-width: 100%;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 1.5rem;
+    font-size: 1.4rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+    color: #F2A922;
+    transform: scale(1.1);
+}
+
+/* Formulario de domicilio y pago */
+#formulario-domicilio, #formulario-pago {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #ce8a0df0;
+}
+
+.contenedor-formulario {
+    width: 60%;
+    padding: 2rem;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #8C0335;
+    margin-bottom: 2rem;
+}
+
+.campo {
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.campo input:focus {
+    border-color: #8C0335;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #8C0335;
+    color: #F0F0F0;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #F2A922;
+    color: #8C0335;
+}
+
+
+/* Contacto */
+#contacto {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #8C0335;
+    color: white;
+}
+
+#contacto a {
+    color: #F2A922;
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociales {
+    margin-top: 1rem;
+}
+
+.redes-sociales a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.redes-sociales img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #182126;
+    color: white;
+
+}
