@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El Rincón del Rico Tamal: Los mejores tamales gourmet y tradicionales en CDMX. Pedidos a domicilio.">
+    <meta name="keywords" content="tamales, comida mexicana, cdmx, tamales gourmet, desayuno">
+    
     <title>El Rincón del Rico Tamal</title>
+    
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
+
     <link rel="stylesheet" href="styles_inicio.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=The+Seasons&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
 </head>
 <body>
     <header>
         <nav class="top-bar">
             <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+                <a href="index.html">
+                    <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal - Inicio">
+                </a>
             </div>
             <ul class="menu">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Menú</a></li>
                 <li><a href="nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -31,97 +38,90 @@
     <section id="inicio" class="hero">
         <div class="swiper carrusel">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="IMG/TAM2.jpg" alt="Imagen 2"></div>
-                <div class="swiper-slide"><img src="IMG/FONDO.webp" alt="Imagen 1"></div>
-                <div class="swiper-slide"><img src="IMG/TAM.jpg" alt="Imagen 1"></div>                
-                <div class="swiper-slide"><img src="IMG/TAM3.jpg" alt="Imagen 3"></div>
-                <div class="swiper-slide"><img src="IMG/TAM5.jpg" alt="Imagen 5"></div>
+                <div class="swiper-slide"><img src="IMG/TAM2.jpg" alt="Tamales recién hechos"></div>
+                <div class="swiper-slide"><img src="IMG/FONDO.webp" alt="Ambiente del restaurante"></div>
+                <div class="swiper-slide"><img src="IMG/TAM.jpg" alt="Tamales oaxaqueños"></div>                
+                <div class="swiper-slide"><img src="IMG/TAM3.jpg" alt="Variedad de tamales dulces"></div>
+                <div class="swiper-slide"><img src="IMG/TAM5.jpg" alt="Tamales verdes y rojos"></div>
             </div>
-            <!-- Botones de navegación -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <!-- Paginación -->
             <div class="swiper-pagination"></div>
         </div>
-         <!-- Información sobre el carrusel -->
         <div class="hero-text">
             <h1>El Rincón del rico Tamal</h1>
             <p>Deliciosos tamales a la puerta de tu hogar</p>
             <a href="productos.html" class="btn">Descubre nuestros sabores</a>
         </div>
     </section>
-    
 
     <section id="productos">
         <h2>Productos Destacados</h2>
         <div class="contenido-productos">  
-            <img src="IMG/logocc.png" alt="Productos destacados" class="miniatura">                
-            <h2></h2>
-            <h2></h2>
+            <img src="IMG/logocc.png" alt="Decoración productos" class="miniatura">                
+            
             <div class="productos-grid">
                 <article>
-                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco" class="producto-img">
+                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco en salsa verde" class="producto-img" loading="lazy">
                     <h3>Gourmet de Puerco</h3>
                     <p class="descripcion">Exquisita pierna de cerdo deshebrada en salsa verde.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button href="pedidos.html" class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
                 <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo" class="producto-img">
+                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo en salsa verde" class="producto-img" loading="lazy">
                     <h3>Gourmet de Pollo</h3>
                     <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
                 <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo" class="producto-img">
+                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo Especial" class="producto-img" loading="lazy">
                     <h3>Gourmet de Pollo</h3>
                     <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
                 <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo" class="producto-img">
+                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo Clásico" class="producto-img" loading="lazy">
                     <h3>Gourmet de Pollo</h3>
                     <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
                 <article>
-                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco" class="producto-img">
+                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco Rojo" class="producto-img" loading="lazy">
                     <h3>Gourmet de Puerco</h3>
                     <p class="descripcion">Exquisita pierna de cerdo deshebrada en salsa verde.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
                 <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo" class="producto-img">
+                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo tradicional" class="producto-img" loading="lazy">
                     <h3>Gourmet de Pollo</h3>
                     <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
                     <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
+                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
                 </article>
             </div>
         </div>
     </section>
 
-    
     <section id="testimonios">
         <h2>Testimonios de Clientes</h2>
-        <img src="IMG/tamyhum.png"alt="Productos destacados" class="miniatura">
+        <img src="IMG/tamyhum.png" alt="Cliente feliz comiendo tamal" class="miniatura" loading="lazy">
         <div class="testimonios-grid">            
             <article>
-                <img src="IMG/test1.jpg" alt="ANA">
+                <img src="IMG/test1.jpg" alt="Foto de cliente Ana" loading="lazy">
                 <p>"Los tamales más deliciosos que he probado, 100% recomendados."</p>
             </article>
             <article>
-                <img src="IMG/test2.jpg" alt="CARLOS">
+                <img src="IMG/test2.jpg" alt="Foto de cliente Carlos" loading="lazy">
                 <p>"Gran sabor y excelente servicio. Definitivamente pediré de nuevo."</p>
             </article>
         </div>
         <a href="contacto.html" class="btn-testimonio">Añadir Testimonio</a>
     </section>
-    
 
     <section id="contacto">
         <h2>Contáctanos</h2>
@@ -129,18 +129,19 @@
         <p>Teléfono: XX-XXXXXXXX</p>
         <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
         <div class="redes-sociales">
-            <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
-            <a href="https://WhatsApp.com" target="_blank"><img src= "IMG/whatssapp.svg"alt="WhatsApp"></a>
-            <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg"alt="Instagram"></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Visítanos en Facebook"><img src="IMG/facebook.svg" alt="Facebook"></a>
+            <a href="https://WhatsApp.com" target="_blank" aria-label="Envíanos un WhatsApp"><img src= "IMG/whatssapp.svg"alt="WhatsApp"></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Síguenos en Instagram"><img src="IMG/instagram.svg"alt="Instagram"></a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 El Rincón del rico Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+        <p>&copy; 2024 El Rincón del rico Tamal | <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
     </footer>
+
     <script>
         const swiper = new Swiper('.swiper', {
-            loop: true, // Ciclo infinito
+            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -150,11 +151,12 @@
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
-                delay: 3000, // 3 segundos entre slides
+                delay: 3000,
                 disableOnInteraction: false,
             },
         });
     </script>
+    
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -168,9 +170,12 @@
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
       </script>
+
     <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+
 </body>
 </html>
+
 
 
 
