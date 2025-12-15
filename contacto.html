@@ -3,64 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - El Rincón del Tamal</title>
-    <link rel="stylesheet" href="styles_contact.css">
-</head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
-            </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>            
-            </ul>
-        </nav>
-    </header>
+    <meta name="description" content="Ponte en contacto con El Rincón del Rico Tamal. Ubicación, teléfono y redes sociales.">
+    <title>Contacto | El Rincón del Rico Tamal</title>
+    
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
 
-    <!-- Main de contacto -->
-    <main id="contacto">
-        <h2>Contactanos</h2>
-        <div class="contacto-container">
-            <!-- Información de contacto -->
-            <div class="info">
-                <p><strong>Email:</strong> <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
-                <p><strong>Teléfono:</strong> XX-XXXXXXXX</p>
-                <p><strong>Ubicación:</strong> Calle Almería, Benito Juárez, #290, CDMX</p>
-                <p>Síguenos en nuestras redes sociales:</p>            
-                <div class="redes-sociales">
-                <ul>
-                    <p>@el_rincon_del_tamal</p>
-                    <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
-                    <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
-                    <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
-                </ul>              
-            </div>   
-            </div>
-            <!-- Espacio para el mapa -->
-            <div class="mapa">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.646459947374!2d-99.173619!3d19.404931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff5b28b947b9%3A0x1c1c7f89c0c8bb90!2sBenito%20Ju%C3%A1rez%2C%20Ciudad%20de%20M%C3%A9xico!5e0!3m2!1ses-419!2smx!4v1691173744591!5m2!1ses-419!2smx" 
-                    width="100%" 
-                    height="300" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        /* Efectos Footer */
+        .social-icon img { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); }
+        .footer-link { color: #b0b0b0; text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-link:hover { padding-left: 5px; color: var(--color-secundario, #D4AF37); }
+
+        /* Estilos del Mapa y Caja de Info */
+        .map-container iframe {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .contact-info-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .banner-title {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="pedidos.html">Hacer Pedido</a></li>
+                </ul>
             </div>
         </div>
-    </main>
+    </nav>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 El Rincón del Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    <header class="bg-dark text-white py-5" style="background-image: url('IMG/FONDO.webp'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+        <div class="container position-relative text-center">
+            <h1 class="display-4 fw-bold banner-title">Contáctanos</h1>
+            <p class="lead">Estamos listos para atenderte</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <h3 class="mb-4 text-primary">Información de Contacto</h3>
+                        
+                        <div class="mb-4">
+                            <h5 class="fw-bold">Dirección</h5>
+                            <p class="text-secondary">Calle Almería #290,<br>Benito Juárez, CDMX</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-bold">Contacto Directo</h5>
+                            <p class="mb-1"><strong>Email:</strong> <a href="mailto:Rincondel_tamal@hotmail.com" class="text-decoration-none text-secondary">Rincondel_tamal@hotmail.com</a></p>
+                            <p><strong>Teléfono:</strong> 55-XX-XX-XX</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-bold">Síguenos</h5>
+                            <p class="text-muted small mb-3">@el_rincon_del_tamal</p>
+                            <div class="d-flex gap-3">
+                                <a href="https://facebook.com" target="_blank" class="social-icon"><img src="IMG/facebook.svg" alt="Facebook" width="32"></a>
+                                <a href="https://WhatsApp.com" target="_blank" class="social-icon"><img src="IMG/whatssapp.svg" alt="WhatsApp" width="32"></a>
+                                <a href="https://instagram.com" target="_blank" class="social-icon"><img src="IMG/instagram.svg" alt="Instagram" width="32"></a>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <a href="pedidos.html" class="btn btn-outline-danger w-100">¿Hambre? Haz tu pedido aquí</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="map-container h-100">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Calle+Almer%C3%ADa+290,+Benito+Ju%C3%A1rez,+CDMX&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; min-height: 400px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #1a1a1a; color: #fff;" class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold" style="letter-spacing: 1px;">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon"><img src="IMG/facebook.svg" alt="Facebook" width="30"></a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon"><img src="IMG/whatssapp.svg" alt="WhatsApp" width="30"></a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon"><img src="IMG/instagram.svg" alt="Instagram" width="30"></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #333;">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="mapa_de_sitio.html" class="text-secondary small text-decoration-none">Mapa de Sitio</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -73,6 +183,6 @@
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
-      </script>
+    </script>
 </body>
 </html>
