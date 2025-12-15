@@ -3,84 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Sitio - El Rincón del Rico Tamal</title>
-    <link rel="stylesheet" href="styles_sitemap.css">
+    <title>Mapa de Sitio | El Rincón del Rico Tamal</title>
+    
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        /* Efectos Footer y Generales */
+        .social-icon img { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)); }
+        .footer-link { color: #b0b0b0; text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-link:hover { padding-left: 5px; color: var(--color-secundario, #D4AF37); }
+        .banner-title { font-family: 'Playfair Display', serif; }
+        
+        /* Estilos específicos del Mapa de Sitio */
+        .sitemap-card {
+            border: none;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .sitemap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .sitemap-link {
+            text-decoration: none;
+            color: var(--color-texto);
+            display: block;
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        .sitemap-link:hover {
+            color: var(--color-primario);
+            padding-left: 5px;
+        }
+    </style>
 </head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="pedidos.html">Hacer Pedido</a></li>
+                </ul>
             </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>                
-            </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white py-5" style="background-image: url('IMG/FONDO.webp'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+        <div class="container position-relative text-center">
+            <h1 class="display-4 fw-bold banner-title">Mapa del Sitio</h1>
+            <p class="lead">Explora cada rincón de nuestra cocina</p>
+        </div>
     </header>
 
-    <!-- Sección principal del mapa del sitio -->
-    <section id="sitemap">
-        <h1>Mapa del Sitio de El Rincon del Rico Tamal</h1>
-        <div class="sitemap-container">
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card sitemap-card p-4">
+                        <h3 class="h4 text-primary mb-3 border-bottom pb-2">Inicio</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="sitemap-link">Página Principal</a></li>
+                            <li><a href="productos.html" class="sitemap-link">Productos Destacados</a></li>
+                            <li><a href="contacto.html" class="sitemap-link">Testimonios</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Página principal 1 -->
-            <div class="sitemap-page">
-                <h2><a href="index.html">Inicio</a></h2>
-                <ul class="subpages">
-                    <li><a href="productos.html">Descubre nuestros sabores</a></li>
-                    <li><a href="pedidos.html">Compra Ahora</a></li>
-                    <li><a href="contacto.html">Añadir Testimonio</a></li>
-                </ul>
-            </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card sitemap-card p-4">
+                        <h3 class="h4 text-primary mb-3 border-bottom pb-2">Nuestro Menú</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="productos.html" class="sitemap-link">Ver Todo el Menú</a></li>
+                            <li><a href="productos.html" class="sitemap-link">Tamales Gourmet y Tradicionales</a></li>
+                            <li><a href="productos.html" class="sitemap-link">Bebidas Calientes</a></li>
+                            <li><a href="productos.html" class="sitemap-link">Salsas y Complementos</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Página principal 2 con subpáginas -->
-            <div class="sitemap-page">
-                <h2><a href="productos.html">Menú</a></h2>
-                <ul class="subpages">
-                    <li><a href="productos.html">Tamales Gourmet</a></li>
-                    <li><a href="productos.html">Complementos</a></li>
-                    <li><a href="productos.html">Bebidas</a></li>                    
-                </ul>
-            </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card sitemap-card p-4">
+                        <h3 class="h4 text-primary mb-3 border-bottom pb-2">Sobre Nosotros</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="nosotros.html" class="sitemap-link">Nuestra Historia (Video)</a></li>
+                            <li><a href="nosotros.html" class="sitemap-link">Misión y Valores</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Página principal 3 -->
-            <div class="sitemap-page">
-                <h2><a href="nosotros.html">Sobre Nosotros</a></h2>
-                <ul class="subpages">
-                    <li><a href="nosotros.html">Nuestra Historia</a></li>
-                    <li><a href="nosotros.html">Nuestros Valores</a></li>
-                </ul>
-            </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card sitemap-card p-4">
+                        <h3 class="h4 text-primary mb-3 border-bottom pb-2">Contacto</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="contacto.html" class="sitemap-link">Ubicación y Mapa</a></li>
+                            <li><a href="contacto.html" class="sitemap-link">Redes Sociales</a></li>
+                            <li><a href="mailto:Rincondel_tamal@hotmail.com" class="sitemap-link">Enviar Correo</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Página principal 4 -->
-            <div class="sitemap-page">
-                <h2><a href="contacto.html">Contacto</a></h2>
-                <ul class="subpages">
-                    <li><a href="contacto.html">Soporte</a></li>
-                    <li><a href="contacto.html">Nuestras Redes</a></li>
-                </ul>
-            </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card sitemap-card p-4">
+                        <h3 class="h4 text-primary mb-3 border-bottom pb-2">Pedidos</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="pedidos.html" class="sitemap-link">Tu Carrito de Compras</a></li>
+                            <li><a href="pedidos.html" class="sitemap-link">Formulario de Envío</a></li>
+                            <li><a href="pedidos.html" class="sitemap-link">Métodos de Pago</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Página principal 5 -->
-            <div class="sitemap-page">
-                <h2><a href="pedidos.html">Pedidos</a></h2>
-                <ul class="subpages">
-                    <li><a href="pedidos.html">Informacion de Orden</a></li>
-                    <li><a href="pago.html">Entrega a Domicilio  </a></li>
-                    <li><a href="pago.html">Formulario pago electronico </a></li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 El Rincón del Rico Tamal</p>
+    <footer style="background-color: #1a1a1a; color: #fff;" class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold" style="letter-spacing: 1px;">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="IMG/facebook.svg" alt="Facebook" width="30">
+                        </a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon">
+                            <img src="IMG/whatssapp.svg" alt="WhatsApp" width="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="IMG/instagram.svg" alt="Instagram" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="text-secondary small">Mapa de Sitio Actual</span>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+    
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() { window.voiceflow.chat.load({ verify: { projectID: '677f4a1f2812e20e7c67ece0' }, url: 'https://general-runtime.voiceflow.com', versionID: 'production' }); }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
 </body>
 </html>
