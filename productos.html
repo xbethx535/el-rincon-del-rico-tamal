@@ -3,182 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - El Rincón del Tamal</title>
-    <link rel="stylesheet" href="styles_prod.css">
+    <title>Menú | El Rincón del Rico Tamal</title>
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        /* Efectos Footer (Idéntico al Index) */
+        .social-icon img { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)); } /* Brillo Dorado */
+        .footer-link { color: #b0b0b0; text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-link:hover { padding-left: 5px; color: var(--color-secundario, #D4AF37); }
+        
+        /* Pestañas */
+        .nav-pills .nav-link.active { background-color: var(--color-primario); color: #fff !important; }
+        .nav-pills .nav-link { color: var(--color-texto); font-family: var(--fuente-titulos); font-weight: bold; margin: 0 5px; }
+        
+        /* Botón Carrito Personalizado (Manual de Identidad) */
+        .btn-carrito-custom {
+            background-color: var(--color-secundario); /* Dorado del Manual */
+            color: #fff;
+            border: none;
+            transition: all 0.3s;
+        }
+        .btn-carrito-custom:hover {
+            background-color: #bfa13f; /* Un poco más oscuro al pasar el mouse */
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Notificación Flotante */
+        #toast-cart {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--color-primario); /* Rojo del Manual */
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1050;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        #toast-cart.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-carrito-custom ms-lg-3 fw-bold rounded-pill px-4" href="pedidos.html">🛒 Ver Carrito</a></li>
+                </ul>
             </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Menú</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li> 
-            </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white py-5" style="background-image: url('IMG/FONDO.webp'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+        <div class="container position-relative text-center">
+            <h1 class="display-4 fw-bold">Nuestro Menú</h1>
+            <p class="lead">Agrega todo lo que quieras a tu pedido</p>
+        </div>
     </header>
 
-    <main>
-        <!-- Sección de Productos -->
-        <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <div class="productos-grid">
-                
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal Gourmet de Pollo" class="producto-img">
-                    <h3>Gourmet de Pollo</h3>
-                    <p>Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/ROJO.webp" alt="Tamal Gourmet de Puerco" class="producto-img">
-                    <h3>Gourmet de Puerco</h3>
-                    <p>Exquisita pierna de cerdo deshebrada en salsa verde.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal Gourmet de Pollo" class="producto-img">
-                    <h3>Gourmet de Pollo</h3>
-                    <p>Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/ROJO.webp" alt="Tamal Gourmet de Puerco" class="producto-img">
-                    <h3>Gourmet de Puerco</h3>
-                    <p>Exquisita pierna de cerdo deshebrada en salsa verde.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal Gourmet de Pollo" class="producto-img">
-                    <h3>Gourmet de Pollo</h3>
-                    <p>Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-            </div>
-        </section>
+    <section class="py-5">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center mb-5" id="menuTabs" role="tablist">
+                <li class="nav-item"><button class="nav-link active rounded-pill px-4" id="tamales-tab" data-bs-toggle="pill" data-bs-target="#tamales" type="button">Tamales</button></li>
+                <li class="nav-item"><button class="nav-link rounded-pill px-4" id="bebidas-tab" data-bs-toggle="pill" data-bs-target="#bebidas" type="button">Bebidas</button></li>
+                <li class="nav-item"><button class="nav-link rounded-pill px-4" id="extras-tab" data-bs-toggle="pill" data-bs-target="#extras" type="button">Complementos</button></li>
+            </ul>
 
-        <!-- Sección de Complementos -->
-        <section id="complementos">
-            <h2>Complementos</h2> 
-            <div class="productos-grid">
-                <article>
-                    <img src="IMG/salsa verde.png" alt="Salsa Verde" class="producto-img">
-                    <h3>Salsa Verde</h3>
-                    <p>Preparada con tomatillo y un toque de cilantro fresco.</p>
-                    <p class="precio">$15.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                  
-                <article>
-                    <img src="IMG/salsa verde.png" alt="Salsa Verde" class="producto-img">
-                    <h3>Salsa Verde</h3>
-                    <p>Preparada con tomatillo y un toque de cilantro fresco.</p>
-                    <p class="precio">$15.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/salsaroja.jpg" alt="Salsa Roja" class="producto-img">
-                    <h3>Salsa Roja</h3>
-                    <p>Hecha con chile guajillo y especias tradicionales.</p>
-                    <p class="precio">$15.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>  <article>
-                    <img src="IMG/salsa verde.png" alt="Salsa Verde" class="producto-img">
-                    <h3>Salsa Verde</h3>
-                    <p>Preparada con tomatillo y un toque de cilantro fresco.</p>
-                    <p class="precio">$15.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/salsaroja.jpg" alt="Salsa Roja" class="producto-img">
-                    <h3>Salsa Roja</h3>
-                    <p>Hecha con chile guajillo y especias tradicionales.</p>
-                    <p class="precio">$15.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>             
+            <div class="tab-content" id="menuTabsContent">
+                <div class="tab-pane fade show active" id="tamales"><div class="row g-4" id="contenedor-tamales"></div></div>
+                <div class="tab-pane fade" id="bebidas"><div class="row g-4" id="contenedor-bebidas"></div></div>
+                <div class="tab-pane fade" id="extras"><div class="row g-4" id="contenedor-extras"></div></div>
             </div>
-        </section>
-
-        <!-- Sección de Bebidas -->
-        <section id="bebidas">
-            <h2>Bebidas</h2>
-            <div class="productos-grid">
-                <article>
-                    <img src="IMG/atoleelote.png" alt="Atole de Elote" class="producto-img">
-                    <h3>Atole de Elote</h3>
-                    <p>Caliente y cremoso, con el sabor tradicional del elote.</p>
-                    <p class="precio">$25.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
- 
-                <article>
-                    <img src="IMG/atoleelote.png" alt="Atole de Elote" class="producto-img">
-                    <h3>Atole de Elote</h3>
-                    <p>Caliente y cremoso, con el sabor tradicional del elote.</p>
-                    <p class="precio">$25.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/atole.png" alt="Chocolate Caliente" class="producto-img">
-                    <h3>Chocolate Caliente</h3>
-                    <p>Hecho con cacao 100% mexicano.</p>
-                    <p class="precio">$30.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/atoleelote.png" alt="Atole de Elote" class="producto-img">
-                    <h3>Atole de Elote</h3>
-                    <p>Caliente y cremoso, con el sabor tradicional del elote.</p>
-                    <p class="precio">$25.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>
-                <article>
-                    <img src="IMG/atole.png" alt="Chocolate Caliente" class="producto-img">
-                    <h3>Chocolate Caliente</h3>
-                    <p>Hecho con cacao 100% mexicano.</p>
-                    <p class="precio">$30.00 c/u</p>
-                    <button class="btn-carrito">Comprar Ahora</button>
-                </article>                             
-            </div>
-        </section>
-    </main>
-
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
-        <p>Teléfono: XX-XXXXXXXX</p>
-        <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
-        <div class="redes-sociales">
-            <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
-            <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
-            <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 El Rincón del Rico Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    <div id="toast-cart">✅ Producto agregado al carrito</div>
+
+    <footer style="background-color: #1a1a1a; color: #fff;" class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold" style="letter-spacing: 1px;">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa, con ingredientes seleccionados y amor en cada receta.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="IMG/facebook.svg" alt="Facebook" width="30">
+                        </a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon">
+                            <img src="IMG/whatssapp.svg" alt="WhatsApp" width="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="IMG/instagram.svg" alt="Instagram" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="mapa_de_sitio.html" class="text-secondary small text-decoration-none">Mapa de Sitio</a>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '677f4a1f2812e20e7c67ece0' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+
+    <script>
+        // --- BASES DE DATOS ---
+        const listaTamales = [
+            { nombre: "Gourmet de Pollo", desc: "Pechuga de pollo guisada en achiote.", precio: 45, img: "IMG/VERDE.jpg" },
+            { nombre: "Gourmet de Puerco", desc: "Pierna de cerdo en salsa verde.", precio: 45, img: "IMG/ROJO.webp" },
+            { nombre: "Dulce de Zarzamora", desc: "Queso crema y mermelada natural.", precio: 45, img: "IMG/TAM3.jpg" },
+            { nombre: "Oaxaqueño Especial", desc: "Mole negro y pollo en hoja de plátano.", precio: 50, img: "IMG/TAM5.jpg" }
+        ];
+
+        const listaBebidas = [
+            { nombre: "Atole de Elote", desc: "Cremoso con granos naturales.", precio: 25, img: "IMG/atoleelote.png" },
+            { nombre: "Chocolate Caliente", desc: "Cacao 100% mexicano.", precio: 30, img: "IMG/atole.png" },
+            { nombre: "Champurrado", desc: "Bebida tradicional de masa.", precio: 25, img: "IMG/atoleelote.png" }
+        ];
+
+        const listaExtras = [
+            { nombre: "Salsa Verde Extra", desc: "Tomatillo fresco.", precio: 15, img: "IMG/salsa verde.png" },
+            { nombre: "Salsa Roja Extra", desc: "Chile guajillo y especias.", precio: 15, img: "IMG/salsaroja.jpg" }
+        ];
+
+        // --- FUNCIÓN PARA MOSTRAR PRODUCTOS ---
+        function mostrarProductos(lista, idContenedor) {
+            const contenedor = document.getElementById(idContenedor);
+            if (!contenedor) return;
+
+            let html = "";
+            lista.forEach(prod => {
+                html += `
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="${prod.img}" class="card-img-top" style="height: 250px; object-fit: cover;" alt="${prod.nombre}">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">${prod.nombre}</h5>
+                            <p class="card-text text-muted flex-grow-1">${prod.desc}</p>
+                            <h4 class="text-primary my-3">$${prod.precio}.00</h4>
+                            <button onclick="agregarAlCarrito('${prod.nombre}', ${prod.precio})" class="btn btn-outline-danger w-100 mt-auto">
+                                Agregar al Carrito 🛒
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            contenedor.innerHTML = html;
+        }
+
+        // --- AGREGAR AL CARRITO (LocalStorage) ---
+        function agregarAlCarrito(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('miCarrito')) || [];
+            const existe = carrito.find(item => item.nombre === nombre);
+
+            if (existe) {
+                existe.cantidad++;
+            } else {
+                carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
             }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
+
+            localStorage.setItem('miCarrito', JSON.stringify(carrito));
+            mostrarToast();
+        }
+
+        function mostrarToast() {
+            var x = document.getElementById("toast-cart");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            mostrarProductos(listaTamales, 'contenedor-tamales');
+            mostrarProductos(listaBebidas, 'contenedor-bebidas');
+            mostrarProductos(listaExtras, 'contenedor-extras');
+            
+            // Chatbot
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() { window.voiceflow.chat.load({ verify: { projectID: '677f4a1f2812e20e7c67ece0' }, url: 'https://general-runtime.voiceflow.com', versionID: 'production' }); }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+        });
+    </script>
 </body>
 </html>
