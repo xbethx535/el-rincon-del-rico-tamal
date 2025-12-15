@@ -3,160 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="El Rincón del Rico Tamal: Los mejores tamales gourmet y tradicionales en CDMX. Pedidos a domicilio.">
-    <meta name="keywords" content="tamales, comida mexicana, cdmx, tamales gourmet, desayuno">
-    
-    <title>El Rincón del Rico Tamal</title>
+    <meta name="description" content="El Rincón del Rico Tamal: Tamales gourmet y tradicionales en CDMX.">
+    <title>El Rincón del Rico Tamal | Inicio</title>
     
     <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
 
-    <link rel="stylesheet" href="styles_inicio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=The+Seasons&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
 </head>
-<body>
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal - Inicio">
-                </a>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="pedidos.html">Hacer Pedido</a></li>
+                </ul>
             </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li> 
-            </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <header id="carruselInicio" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="IMG/FONDO.webp" class="d-block w-100" style="height: 80vh; object-fit: cover; filter: brightness(0.6);" alt="Ambiente restaurante">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-3 fw-bold">Tradición en cada bocado</h1>
+                    <p class="lead text-white mb-4">Deliciosos tamales gourmet a la puerta de tu hogar.</p>
+                    <div><a href="productos.html" class="btn btn-primary btn-lg">Descubre nuestros sabores</a></div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="IMG/TAM2.jpg" class="d-block w-100" style="height: 80vh; object-fit: cover; filter: brightness(0.6);" alt="Tamales recién hechos">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-3 fw-bold">Sabor Artesanal</h1>
+                    <p class="lead text-white mb-4">Hechos con ingredientes frescos y recetas de familia.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="IMG/TAM.jpg" class="d-block w-100" style="height: 80vh; object-fit: cover; filter: brightness(0.6);" alt="Tamales Oaxaqueños">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h1 class="display-3 fw-bold">Variedad para todos</h1>
+                    <p class="lead text-white mb-4">Desde lo clásico hasta lo gourmet.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselInicio" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselInicio" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="swiper carrusel">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="IMG/TAM2.jpg" alt="Tamales recién hechos"></div>
-                <div class="swiper-slide"><img src="IMG/FONDO.webp" alt="Ambiente del restaurante"></div>
-                <div class="swiper-slide"><img src="IMG/TAM.jpg" alt="Tamales oaxaqueños"></div>                
-                <div class="swiper-slide"><img src="IMG/TAM3.jpg" alt="Variedad de tamales dulces"></div>
-                <div class="swiper-slide"><img src="IMG/TAM5.jpg" alt="Tamales verdes y rojos"></div>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <img src="IMG/logocc.png" alt="Decoración" width="50" class="mb-3">
+                <h2>Productos Destacados</h2>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="hero-text">
-            <h1>El Rincón del rico Tamal</h1>
-            <p>Deliciosos tamales a la puerta de tu hogar</p>
-            <a href="productos.html" class="btn">Descubre nuestros sabores</a>
-        </div>
-    </section>
 
-    <section id="productos">
-        <h2>Productos Destacados</h2>
-        <div class="contenido-productos">  
-            <img src="IMG/logocc.png" alt="Decoración productos" class="miniatura">                
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="IMG/ROJO.webp" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Tamal de Puerco">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Gourmet de Puerco</h5>
+                            <p class="card-text text-muted flex-grow-1">Pierna de cerdo deshebrada en salsa verde.</p>
+                            <h4 class="text-primary my-3">$45.00</h4>
+                            <a href="pedidos.html" class="btn btn-outline-danger w-100 mt-auto">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="IMG/VERDE.jpg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Tamal de Pollo">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Gourmet de Pollo</h5>
+                            <p class="card-text text-muted flex-grow-1">Pechuga de pollo guisada en achiote y especias.</p>
+                            <h4 class="text-primary my-3">$45.00</h4>
+                            <a href="pedidos.html" class="btn btn-outline-danger w-100 mt-auto">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="IMG/TAM3.jpg" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Variedad Dulce">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Dulce Especial</h5>
+                            <p class="card-text text-muted flex-grow-1">Tamales dulces con frutas naturales.</p>
+                            <h4 class="text-primary my-3">$45.00</h4>
+                            <a href="pedidos.html" class="btn btn-outline-danger w-100 mt-auto">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="productos-grid">
-                <article>
-                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco en salsa verde" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Puerco</h3>
-                    <p class="descripcion">Exquisita pierna de cerdo deshebrada en salsa verde.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo en salsa verde" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Pollo</h3>
-                    <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo Especial" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Pollo</h3>
-                    <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo Clásico" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Pollo</h3>
-                    <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
-                <article>
-                    <img src= "IMG/ROJO.webp" alt="Tamal de Puerco Rojo" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Puerco</h3>
-                    <p class="descripcion">Exquisita pierna de cerdo deshebrada en salsa verde.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
-                <article>
-                    <img src="IMG/VERDE.jpg" alt="Tamal de Pollo tradicional" class="producto-img" loading="lazy">
-                    <h3>Gourmet de Pollo</h3>
-                    <p class="descripcion">Pechuga de pollo guisada en achiote y especias.</p>
-                    <p class="precio">$45.00 c/u</p>
-                    <a href="pedidos.html" class="btn-carrito">Comprar Ahora</a>
-                </article>
+            <div class="text-center mt-5">
+                <a href="productos.html" class="btn btn-primary">Ver Menú Completo</a>
             </div>
         </div>
     </section>
 
-    <section id="testimonios">
-        <h2>Testimonios de Clientes</h2>
-        <img src="IMG/tamyhum.png" alt="Cliente feliz comiendo tamal" class="miniatura" loading="lazy">
-        <div class="testimonios-grid">            
-            <article>
-                <img src="IMG/test1.jpg" alt="Foto de cliente Ana" loading="lazy">
-                <p>"Los tamales más deliciosos que he probado, 100% recomendados."</p>
-            </article>
-            <article>
-                <img src="IMG/test2.jpg" alt="Foto de cliente Carlos" loading="lazy">
-                <p>"Gran sabor y excelente servicio. Definitivamente pediré de nuevo."</p>
-            </article>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Testimonios de Clientes</h2>
+            <div class="text-center mb-4">
+                 <img src="IMG/tamyhum.png" alt="Cliente feliz" style="max-width: 150px;">
+            </div>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-5">
+                    <div class="card p-3 h-100 shadow-sm">
+                        <div class="d-flex align-items-center">
+                            <img src="IMG/test1.jpg" alt="Ana" class="rounded-circle me-3" width="60" height="60" style="object-fit: cover;">
+                            <p class="mb-0 fst-italic">"Los tamales más deliciosos que he probado, 100% recomendados."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card p-3 h-100 shadow-sm">
+                        <div class="d-flex align-items-center">
+                            <img src="IMG/test2.jpg" alt="Carlos" class="rounded-circle me-3" width="60" height="60" style="object-fit: cover;">
+                            <p class="mb-0 fst-italic">"Gran sabor y excelente servicio. Definitivamente pediré de nuevo."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="contacto.html" class="btn-testimonio">Añadir Testimonio</a>
     </section>
 
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_ricotamal@hotmail.com</a></p>
-        <p>Teléfono: XX-XXXXXXXX</p>
-        <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
-        <div class="redes-sociales">
-            <a href="https://facebook.com" target="_blank" aria-label="Visítanos en Facebook"><img src="IMG/facebook.svg" alt="Facebook"></a>
-            <a href="https://WhatsApp.com" target="_blank" aria-label="Envíanos un WhatsApp"><img src= "IMG/whatssapp.svg"alt="WhatsApp"></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Síguenos en Instagram"><img src="IMG/instagram.svg"alt="Instagram"></a>
-        </div>
-    </section>
+    <footer class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa, con ingredientes seleccionados y amor en cada receta.
+                    </p>
+                </div>
 
-    <footer>
-        <p>&copy; 2024 El Rincón del rico Tamal | <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="IMG/facebook.svg" alt="Facebook" width="30">
+                        </a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon">
+                            <img src="IMG/whatssapp.svg" alt="WhatsApp" width="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="IMG/instagram.svg" alt="Instagram" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="mapa_de_sitio.html" class="text-secondary small text-decoration-none">Mapa de Sitio</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -169,12 +225,11 @@
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
-      </script>
-
-    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+    </script>
 
 </body>
 </html>
+
 
 
 
