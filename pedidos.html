@@ -3,81 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - El Rincón del Tamal</title>
-    <link rel="stylesheet" href="styles_pedidos.css">
+    <title>Tu Carrito | El Rincón del Rico Tamal</title>
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        /* Efectos Footer (Idéntico al Index) */
+        .social-icon img { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)); }
+        .footer-link { color: #b0b0b0; text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-link:hover { padding-left: 5px; color: var(--color-secundario, #D4AF37); }
+        .banner-title { font-family: 'Playfair Display', serif; }
+        .form-section { background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        .order-summary { background-color: #fff; border: 1px solid #eee; border-radius: 15px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: sticky; top: 100px; }
+        
+        /* Botón Carrito Personalizado */
+        .btn-carrito-custom {
+            background-color: var(--color-secundario);
+            color: #fff;
+            border: none;
+            transition: all 0.3s;
+        }
+        .btn-carrito-custom:hover {
+            background-color: #bfa13f;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-carrito-custom ms-lg-3 fw-bold rounded-pill px-4 active" href="#">🛒 Tu Carrito</a></li>
+                </ul>
             </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="#">Pedidos</a></li> 
-            </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white py-5" style="background-image: url('IMG/FONDO.webp'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+        <div class="container position-relative text-center">
+            <h1 class="display-4 fw-bold banner-title">Finalizar Compra</h1>
+            <p class="lead">Revisa tus productos y completa el envío</p>
+        </div>
     </header>
 
-    <!-- Sección principal -->
-    
-  <!-- Sección de pedidos -->
-  <section id="pedidos">
-    <div class="contenedor-pedido">
-        <!-- Rectángulo de la orden -->
-        <div class="orden">
-            <h2>Tu Pedido</h2>
-            <ul>
-                <li>Gourmet de Pollo ..$45</li>
-                <li>Salsa Roja ............. $15</li>
-                <li>Chocolate Caliente.$30</li>
-                <!-- Agrega aquí más productos según el pedido -->
-            </ul>
-            <h2></h2>
-            <p>Total: $120</p>
-        </div>
+    <section class="py-5">
+        <div class="container">
+            <form onsubmit="realizarPedido(event)" class="row g-5">
+                
+                <div class="col-lg-8">
+                    <div class="form-section">
+                        <h3 class="mb-4 text-primary"><span class="badge bg-primary me-2">1</span>Datos de Envío</h3>
+                        <div class="row g-3">
+                            <div class="col-12"><label class="form-label">Nombre Completo</label><input type="text" class="form-control" required placeholder="Ej. Juan Pérez"></div>
+                            <div class="col-md-6"><label class="form-label">Correo</label><input type="email" class="form-control" required placeholder="juan@ejemplo.com"></div>
+                            <div class="col-md-6"><label class="form-label">Teléfono</label><input type="tel" class="form-control" required placeholder="55 1234 5678"></div>
+                            <div class="col-12"><label class="form-label">Dirección</label><input type="text" class="form-control" required placeholder="Calle, Número, Colonia"></div>
+                        </div>
+                    </div>
 
-        <!-- Imagen y botón de pago -->
-        <div class="pago">
-            <img src="IMG/tamencar.png" alt="Imagen de Pago">
-            <a href="pago.html" class="btn">Ir a pagar</a>
-        </div>
-    </div>
-  </section>
+                    <div class="form-section">
+                        <h3 class="mb-4 text-primary"><span class="badge bg-primary me-2">2</span>Método de Pago</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pago" id="tarjeta" checked>
+                            <label class="form-check-label" for="tarjeta">Tarjeta de Crédito / Débito</label>
+                        </div>
+                        <div class="row g-3 p-3 mt-1 bg-light rounded">
+                            <div class="col-12"><input type="text" class="form-control" placeholder="Número de Tarjeta" maxlength="19"></div>
+                            <div class="col-6"><input type="text" class="form-control" placeholder="MM/AA"></div>
+                            <div class="col-6"><input type="text" class="form-control" placeholder="CVV"></div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Sección de contacto -->
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
-        <p>Teléfono: XX-XXXXXXXX</p>
-        <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
-        <div class="redes-sociales">
-            <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
-            <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
-            <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
+                <div class="col-lg-4">
+                    <div class="order-summary">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-primary mb-0">Tu Carrito</h4>
+                            <button type="button" onclick="vaciarCarrito()" class="btn btn-sm btn-outline-secondary">Vaciar</button>
+                        </div>
+                        
+                        <ul class="list-group mb-3" id="lista-resumen">
+                            <li class="list-group-item text-center text-muted">Tu carrito está vacío</li>
+                        </ul>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="fw-bold">Total a Pagar:</span>
+                            <strong class="fs-4 text-primary" id="total-display">$0.00</strong>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg py-3" id="btn-pagar" disabled>
+                            Confirmar y Pagar
+                        </button>
+                        <p class="text-center mt-3 small text-muted">
+                            <img src="IMG/tamencar.png" alt="Seguro" width="20" class="me-1"> Transacción segura
+                        </p>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 El Rincón del Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    <footer style="background-color: #1a1a1a; color: #fff;" class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold" style="letter-spacing: 1px;">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa, con ingredientes seleccionados y amor en cada receta.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="IMG/facebook.svg" alt="Facebook" width="30">
+                        </a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon">
+                            <img src="IMG/whatssapp.svg" alt="WhatsApp" width="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="IMG/instagram.svg" alt="Instagram" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="mapa_de_sitio.html" class="text-secondary small text-decoration-none">Mapa de Sitio</a>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '677f4a1f2812e20e7c67ece0' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarCarrito();
+            
+            // Chatbot
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() { window.voiceflow.chat.load({ verify: { projectID: '677f4a1f2812e20e7c67ece0' }, url: 'https://general-runtime.voiceflow.com', versionID: 'production' }); }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+        });
+
+        function cargarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('miCarrito')) || [];
+            const lista = document.getElementById('lista-resumen');
+            const totalDisplay = document.getElementById('total-display');
+            const btnPagar = document.getElementById('btn-pagar');
+            let totalGeneral = 0;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<li class="list-group-item text-center text-muted">Tu carrito está vacío. ¡Ve al menú!</li>';
+                totalDisplay.innerText = "$0.00";
+                btnPagar.disabled = true;
+                return;
             }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
+
+            let html = "";
+            carrito.forEach(item => {
+                let subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal;
+                
+                html += `
+                <li class="list-group-item d-flex justify-content-between lh-sm align-items-center">
+                    <div>
+                        <h6 class="my-0 text-primary">${item.nombre}</h6>
+                        <small class="text-muted">Cantidad: <strong>${item.cantidad}</strong> x $${item.precio}</small>
+                    </div>
+                    <span class="text-muted fw-bold">$${subtotal}.00</span>
+                </li>`;
+            });
+
+            lista.innerHTML = html;
+            totalDisplay.innerText = "$" + totalGeneral + ".00";
+            btnPagar.disabled = false;
+        }
+
+        function vaciarCarrito() {
+            if(confirm("¿Estás seguro de borrar tu pedido?")) {
+                localStorage.removeItem('miCarrito');
+                cargarCarrito();
+            }
+        }
+
+        function realizarPedido(event) {
+            event.preventDefault();
+            const btn = document.querySelector('button[type="submit"]');
+            btn.innerHTML = 'Procesando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("¡Pedido Exitoso! \n\nGracias por tu compra. Tu pedido está en camino.");
+                localStorage.removeItem('miCarrito');
+                window.location.href = "index.html"; 
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
