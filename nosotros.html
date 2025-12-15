@@ -3,75 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - El Rincón del Rico Tamal</title>
-    <link rel="stylesheet" href="styles_nosotros.css">
-</head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <nav class="top-bar">
-            <div class="logo">
-                <img src="IMG/LOGO.png" alt="Logo El Rincón del Tamal">
-            </div>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li> 
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Sección principal -->
-    <main id="nosotros">
-        <!-- Sección Sobre Nosotros -->
-        <section class="sobre-nosotros">
-            <div class="texto-sobre-nosotros">
-                <h2>Sobre Nosotros</h2>
-                <p>Este proyecto nace de la idea de llevar un producto típicamente conocido a la mesa del cliente, cumpliendo con expectativas de sabor, calidad y precio.</p>
-                
-                <video width="640" height="360" src="IMG\MyHeritageVideo.mp4" controls></video>
-            </div>
-            <div class="imagen-sobre-nosotros">
-                <img src="IMG/HACTAM.jpg" alt="sobre nosotros">
-            </div>
-        </section>
+    <meta name="description" content="Conoce la historia y los valores de El Rincón del Rico Tamal.">
+    <title>Nosotros | El Rincón del Rico Tamal</title>
     
-        <!-- Sección Nuestros Valores -->
-        <section class="nuestros-valores">
-            <div class="imagen-nuestros-valores">
-                <img src="IMG/taml-y-mas-.png" alt="nuestros valores">
-            </div>
-            <div class="texto-nuestros-valores">
-                <h3>Nuestros Valores</h3>
-                <ul>
-                    <li><strong>Tradición:</strong> Respetar las recetas tradicionales y utilizar ingredientes de alta calidad.</li>
-                    <li><strong>Familia:</strong> Crear un ambiente cálido y acogedor.</li>
-                    <li><strong>Innovación:</strong> Crear nuevas variedades de tamales adaptadas a los gustos de nuestros clientes.</li>
+    <link rel="icon" type="image/png" href="IMG/LOGO.png"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        /* Efectos Footer */
+        .social-icon img { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover img { transform: translateY(-5px) scale(1.1); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); }
+        .footer-link { color: #b0b0b0; text-decoration: none; transition: color 0.3s ease, padding-left 0.3s ease; }
+        .footer-link:hover { padding-left: 5px; color: var(--color-secundario, #D4AF37); }
+
+        /* Estilos Video e Imágenes */
+        video {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 100%;
+            height: auto;
+        }
+        .img-valores {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Asegurar que el título del banner use la fuente correcta */
+        .banner-title {
+            font-family: 'Playfair Display', serif; /* Misma fuente que en el index */
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="IMG/LOGO.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
+                <span>El Rincón del Tamal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="pedidos.html">Hacer Pedido</a></li>
                 </ul>
             </div>
-        </section>
-    </main>
-    
+        </div>
+    </nav>
 
-    <!-- Sección de contacto -->
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <p>Email: <a href="mailto:Rincondel_tamal@hotmail.com">Rincondel_tamal@hotmail.com</a></p>
-        <p>Teléfono: XX-XXXXXXXX</p>
-        <p>Ubicación: Calle Almería, Benito Juárez, #290, CDMX</p>
-        <div class="redes-sociales">
-            <a href="https://facebook.com" target="_blank"><img src="IMG/facebook.svg" alt="Facebook"></a>
-            <a href="https://WhatsApp.com" target="_blank"><img src="IMG/whatssapp.svg" alt="WhatsApp"></a>
-            <a href="https://instagram.com" target="_blank"><img src="IMG/instagram.svg" alt="Instagram"></a>
+    <header class="bg-dark text-white py-5" style="background-image: url('IMG/FONDO.webp'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+        
+        <div class="container position-relative text-center">
+            <h1 class="display-4 fw-bold banner-title">Nuestra Historia</h1>
+            <p class="lead">Tradición, familia y el verdadero sabor mexicano</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">El Origen del Sabor</h2>
+                    <p class="lead text-secondary">
+                        Este proyecto nace de la idea de llevar un producto típicamente conocido a la mesa del cliente, cumpliendo con las más altas expectativas de sabor, calidad y precio.
+                    </p>
+                    <p>
+                        En <strong>El Rincón del Tamal</strong>, no solo cocinamos; preservamos un legado. Cada receta ha sido transmitida de generación en generación, asegurando que ese sabor casero que tanto amas se mantenga intacto en cada bocado.
+                    </p>
+                    <div class="mt-4">
+                        <a href="productos.html" class="btn btn-outline-danger">Ver Nuestro Menú</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <video controls poster="IMG/FONDO.webp">
+                        <source src="IMG/MyHeritageVideo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <p class="text-center small text-muted mt-2">Un vistazo a nuestras raíces</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 El Rincón del Rico Tamal |   <a href="mapa_de_sitio.html">Mapa de sitio</a> </p>
+    <hr class="container my-5" style="opacity: 0.1;">
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Nuestros Valores</h2>
+                    <p class="text-secondary mb-4">Lo que nos mueve cada mañana para encender los fogones.</p>
+                    
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 ps-0">
+                            <h5 class="fw-bold text-primary">Tradición</h5>
+                            <p class="mb-0 text-muted">Respetamos las recetas originales y utilizamos ingredientes 100% mexicanos de alta calidad.</p>
+                        </div>
+                        <div class="list-group-item border-0 ps-0">
+                            <h5 class="fw-bold text-primary">Familia</h5>
+                            <p class="mb-0 text-muted">Creamos un ambiente cálido y acogedor, porque para nosotros, cada cliente es parte de la familia.</p>
+                        </div>
+                        <div class="list-group-item border-0 ps-0">
+                            <h5 class="fw-bold text-primary">Innovación</h5>
+                            <p class="mb-0 text-muted">Aunque amamos lo clásico, siempre buscamos nuevas formas de sorprender a tu paladar.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <img src="IMG/taml-y-mas-.png" alt="Nuestros Valores" class="img-valores img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #1a1a1a; color: #fff;" class="py-5 mt-auto">
+        <div class="container">
+            <div class="row gy-4 text-center text-md-start">
+                
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+                        <img src="IMG/LOGO.png" alt="Logo Footer" width="40" class="me-2">
+                        <h5 class="text-uppercase mb-0 fw-bold" style="letter-spacing: 1px;">El Rincón del Tamal</h5>
+                    </div>
+                    <p class="text-secondary small">
+                        Llevamos el auténtico sabor de la tradición mexicana directamente a tu mesa, con ingredientes seleccionados y amor en cada receta.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="footer-link">Nuestro Menú</a></li>
+                        <li class="mb-2"><a href="pedidos.html" class="footer-link">Hacer Pedido</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3 fw-bold">Contáctanos</h5>
+                    <p class="mb-1 small"><strong class="text-white">Ubicación:</strong> Calle Almería #290, CDMX</p>
+                    <p class="mb-4 small"><strong class="text-white">Email:</strong> Rincondel_tamal@hotmail.com</p>
+                    
+                    <h6 class="text-uppercase mb-3 small fw-bold">Síguenos</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="IMG/facebook.svg" alt="Facebook" width="30">
+                        </a>
+                        <a href="https://WhatsApp.com" target="_blank" class="social-icon">
+                            <img src="IMG/whatssapp.svg" alt="WhatsApp" width="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="IMG/instagram.svg" alt="Instagram" width="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: #333;">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="small text-secondary mb-0">&copy; 2024 El Rincón del Rico Tamal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="mapa_de_sitio.html" class="text-secondary small text-decoration-none">Mapa de Sitio</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="mGYJzuBWgp"></script>
     <script type="text/javascript">
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -84,6 +204,6 @@
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
-      </script>
+    </script>
 </body>
 </html>
