@@ -115,3 +115,68 @@ footer {
     padding-left: 5px;
     color: var(--color-secundario);
 }
+
+/* --- CORRECCIÓN CARRUSEL: Texto legible --- */
+
+/* Título del Carrusel: Color Crema con sombra para que se lea perfecto */
+.carousel-caption h1 {
+    color: var(--color-fondo) !important; /* Usamos el color crema (#FFFBF0) */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Sombra negra fuerte detrás */
+    font-weight: 700;
+}
+
+/* Texto pequeño del Carrusel: Blanco puro para máximo contraste */
+.carousel-caption p {
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9); /* Sombra para lectura fácil */
+    font-weight: 500;
+}
+
+/* Botón del Carrusel: Mantenemos el rojo para que destaque como "llamado a la acción" */
+.carousel-caption .btn-primary {
+    background-color: var(--color-primario) !important;
+    border-color: var(--color-primario) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para que el botón "flote" */
+}
+
+/* --- CORRECCIÓN FOOTER: Visibilidad y Accesibilidad --- */
+
+/* 1. Títulos del Footer: Cambiamos de Rojo a Dorado/Maíz */
+/* Esto hace que "ENLACES RÁPIDOS", "CONTÁCTANOS" y el nombre de la marca resalten */
+footer h5, footer h6 {
+    color: var(--color-secundario) !important; /* Dorado (#D4AF37) */
+    letter-spacing: 1px;
+}
+
+/* 2. Textos pequeños y Enlaces: Gris muy claro (casi blanco) para lectura fácil */
+footer p, footer .footer-link, footer .text-secondary {
+    color: #e0e0e0 !important;
+}
+
+/* Hover de enlaces: Se ponen Dorados al pasar el mouse */
+footer .footer-link:hover {
+    color: var(--color-secundario) !important;
+    padding-left: 5px;
+}
+
+/* 3. ARREGLO DE ICONOS (Redes Sociales) */
+/* Usamos un filtro para invertir el color negro de la imagen a BLANCO */
+.social-icon img {
+    filter: invert(1); /* Esto vuelve blanco cualquier icono negro */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    opacity: 0.9;
+}
+
+/* Hover en Iconos: Brillo Dorado */
+.social-icon:hover img {
+    transform: translateY(-5px) scale(1.1);
+    /* Mantenemos el blanco pero agregamos una sombra dorada brillante */
+    filter: invert(1) drop-shadow(0 0 8px var(--color-secundario)); 
+    opacity: 1;
+}
+
+/* Línea divisoria */
+footer hr {
+    border-color: #444 !important;
+    opacity: 1;
+}
