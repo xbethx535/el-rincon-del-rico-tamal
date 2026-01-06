@@ -16,24 +16,37 @@
 
     <link rel="stylesheet" href="global.css">
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
     <style>
         .audio-card {
             background-color: #fffbf0; /* Fondo Crema suave */
-            border-left: 5px solid var(--color-secundario, #D4AF37); /* Borde Dorado a la izquierda */
+            border-left: 5px solid var(--color-secundario, #D4AF37); /* Borde Dorado */
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            height: 100%; /* Para que tenga la misma altura que el modelo 3D */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .audio-card:hover {
             transform: translateY(-5px);
         }
-        /* Personalizamos un poco el ancho del reproductor */
         audio {
             width: 100%;
             height: 40px;
             border-radius: 20px;
             margin-top: 15px;
+        }
+        /* Estilo del contenedor 3D */
+        .model-container {
+            height: 400px;
+            background: radial-gradient(circle, #ffffff 0%, #f1f1f1 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -100,22 +113,44 @@
 
     <section class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+            <div class="row align-items-center g-4">
+                
+                <div class="col-lg-5">
                     <div class="audio-card text-center">
                         <div class="mb-3">
-                            <img src="IMG/LOGO.png" alt="Icono" width="60">
+                            <img src="IMG/LOGO.png" alt="Icono" width="70">
                         </div>
                         <h3 class="mb-2" style="font-family: 'Playfair Display', serif;">¡Bienvenidos a nuestra cocina!</h3>
-                        <p class="text-muted mb-3">Escucha un mensaje especial sobre nuestra historia y sabor.</p>
+                        <p class="text-muted mb-4">
+                            Dale play para escuchar un mensaje especial sobre nuestra historia y el amor que ponemos en cada receta.
+                        </p>
                         
                         <audio controls>
                             <source src="IMG/descripcion.mp3" type="audio/mpeg">
                             Tu navegador no soporta el elemento de audio.
                         </audio>
-
                     </div>
                 </div>
+
+                <div class="col-lg-7">
+                    <div class="model-container position-relative">
+                        <div class="position-absolute top-0 start-0 m-3 badge bg-primary z-2">
+                            ✨ ¡Nuevo! Toca para interactuar
+                        </div>
+
+                        <model-viewer 
+                            src="IMG/tamal3d.glb" 
+                            alt="Tamal Gourmet en 3D" 
+                            auto-rotate 
+                            camera-controls 
+                            ar 
+                            shadow-intensity="1" 
+                            camera-orbit="45deg 55deg 2.5m"
+                            style="width: 100%; height: 100%;">
+                        </model-viewer>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -272,6 +307,17 @@
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
+    </script>
+    
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (document.activeElement) {
+                    document.activeElement.blur();
+                }
+                window.scrollTo(0, 0);
+            }, 100);
+        });
     </script>
 
 </body>
