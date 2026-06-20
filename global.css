@@ -18,13 +18,17 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     font-family: var(--fuente-cuerpo);
-    /* AQUI MODIFIQUE EL CURSOR-DANIEL PALACIOS BRIONES*/
-    cursor: url('IMG/tamal_cursor_dani.png'), auto;
+}
+ /* AQUI MODIFIQUE EL CURSOR-DANIEL PALACIOS BRIONES*/
+* {
+    cursor: url('IMG/tamal_cursor_dani.png'), auto !important; 
 }
 
 a, button, input[type="submit"], input[type="button"], .btn, .nav-link {
     cursor: url('IMG/tamal_cursor_dani.png'), pointer !important;
 }
+
+/* AQUI MODIFIQUE EL CURSOR-DANIEL PALACIOS BRIONES*/
 
 h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: var(--fuente-titulos);
