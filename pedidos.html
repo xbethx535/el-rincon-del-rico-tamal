@@ -83,13 +83,8 @@
                     <div class="form-section">
                         <h3 class="mb-4 text-primary"><span class="badge bg-primary me-2">2</span>Método de Pago</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pago" id="tarjeta" checked>
-                            <label class="form-check-label" for="tarjeta">Tarjeta de Crédito / Débito</label>
-                        </div>
-                        <div class="row g-3 p-3 mt-1 bg-light rounded">
-                            <div class="col-12"><input type="text" class="form-control" placeholder="Número de Tarjeta" maxlength="19"></div>
-                            <div class="col-6"><input type="text" class="form-control" placeholder="MM/AA"></div>
-                            <div class="col-6"><input type="text" class="form-control" placeholder="CVV"></div>
+                           <input class="form-check-input" type="radio" name="pago" id="efectivo" checked>
+                            <label class="form-check-label" for="efectivo">Pago en Efectivo / Transferencia al entregar</label>
                         </div>
                     </div>
                 </div>
@@ -110,8 +105,8 @@
                             <strong class="fs-4 text-primary" id="total-display">$0.00</strong>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100 btn-lg py-3" id="btn-pagar" disabled>
-                            Confirmar y Pagar
+                        <button type="submit" class="btn btn-success w-100 btn-lg py-3 fw-bold" id="btn-pagar" disabled>
+                            Confirmar y Pedir por WhatsApp
                         </button>
                         <p class="text-center mt-3 small text-muted">
                             <img src="IMG/tamencar.png" alt="Seguro" width="20" class="me-1"> Transacción segura
@@ -236,16 +231,44 @@
         }
 
         function realizarPedido(event) {
-            event.preventDefault();
-            const btn = document.querySelector('button[type="submit"]');
-            btn.innerHTML = 'Procesando...';
+            event.preventDefault(); 
+            
+            const btn = document.getElementById('btn-pagar');
+            btn.innerHTML = 'Conectando con WhatsApp...';
             btn.disabled = true;
 
+            let nombre = document.getElementById('nombreCliente').value;
+            let direccion = document.getElementById('direccionCliente').value;
+            let telefono = document.getElementById('telefonoCliente').value;
+
+            let carrito = JSON.parse(localStorage.getItem('miCarrito')) || [];
+            let listaProductos = "";
+            let totalGeneral = 0;
+
+            carrito.forEach(item => {
+                let subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal;
+                listaProductos += `- ${item.cantidad}x ${item.nombre} ($${subtotal})\n`;
+            });
+
+            let numeroWhatsApp = "525582649366"; 
+
+            let mensaje = `¡Hola El Rincón del Rico Tamal! 🫔\n\n`;
+            mensaje += `Mi nombre es *${nombre}* y quiero hacer el siguiente pedido:\n\n`;
+            mensaje += `*Mi Carrito:*\n${listaProductos}\n`;
+            mensaje += `*Total a pagar:* $${totalGeneral}.00\n\n`;
+            mensaje += `*Datos de entrega:*\n`;
+            mensaje += `- Dirección: ${direccion}\n`;
+            mensaje += `- Teléfono: ${telefono}\n\n`;
+            mensaje += `¿Me confirman mi pedido por favor?`;
+
+            let urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
             setTimeout(() => {
-                alert("¡Pedido Exitoso! \n\nGracias por tu compra. Tu pedido está en camino.");
-                localStorage.removeItem('miCarrito');
+                window.open(urlWhatsApp, '_blank'); 
+                localStorage.removeItem('miCarrito'); 
                 window.location.href = "index.html"; 
-            }, 1500);
+            }, 1000);
         }
     </script>
 </body>
