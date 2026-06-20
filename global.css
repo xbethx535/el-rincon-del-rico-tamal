@@ -18,7 +18,8 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     font-family: var(--fuente-cuerpo);
-    cursor: url('IMG/tamal-cursor.png'), auto;
+    /* AQUI MODIFIQUE EL CURSOR-DANIEL PALACIOS BRIONES*/
+    cursor: url('IMG/tamal_cursor_dani.png'), auto;
 }
 
 a, button, input[type="submit"], input[type="button"], .btn, .nav-link {
